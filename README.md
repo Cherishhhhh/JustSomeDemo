@@ -5,7 +5,7 @@
 
 #### 使用说明
 
-[点我访问!]https://cherishhhhh.github.io/JustSomeDemo/
+[点我访问!](https://cherishhhhh.github.io/JustSomeDemo/)
 
 #### 参与贡献
 
