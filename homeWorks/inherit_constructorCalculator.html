@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>继承+构造函数计算器</title>
+    <link rel="shortcut icon" href="../assets/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/public.css">
+</head>
+
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.run = function () {
+            console.log(`${this.name} is running!`);
+        }
+
+        function Teacher(name, age, addr) {
+            Person.call(this, name, age);
+            this.addr = addr;
+        }
+        Teacher.prototype = Person.prototype;
+
+        var t1 = new Teacher('John', 35, '123 Main St');
+        t1.run();
+
+        //分割线---------------------------------------------------
+
+        function Calc(a, b) {
+            this.a = a;
+            this.b = b;
+        }
+
+        Calc.prototype.add = function () {
+            return this.a + this.b;
+        }
+
+        Calc.prototype.sub = function () {
+            return this.a - this.b;
+        }
+
+        Calc.prototype.mul = function () {
+            return this.a * this.b;
+        }
+
+        Calc.prototype.div = function () {
+            if (this.b === 0) {
+                console.log('除数不能为0！');
+                return undefined;
+            }
+            return this.a / this.b;
+        }
+
+        let calc = new Calc(32, 0);
+        let r1 = calc.add(); // 32+43=75
+        let r2 = calc.sub(); // 32-43=-11
+        let r3 = calc.mul(); // 32*43=1376
+        let r4 = calc.div(); // 32/43=0.7441860465116279
+        console.log(r1, r2, r3, r4);
+    </script>
+</body>
+
+</html>
