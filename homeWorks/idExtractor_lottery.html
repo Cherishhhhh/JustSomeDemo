@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Date Extractor + Lottery</title>
+    <link rel="shortcut icon" href="../assets/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/public.css">
+</head>
+
+<body>
+
+    <div class="idDateExtractor">
+        <input type="text" id="idInput" placeholder="请输入身份证号码">
+        <button onclick="extractDate()">提取日期</button>
+        <div id="output"></div>
+    </div>
+    <div class="lottery">
+        <button onclick="Lottery()">点我!</button>
+        <div id="message">点击按钮抽奖</div>
+    </div>
+
+    <script>
+        // 日期提取
+        function extractDate() {
+            let idCard = document.getElementById('idInput').value;
+            if (idCard.length !== 18) {
+                alert('输入有误!请输入18位身份证号码!');
+                document.getElementById('output').innerText = ``;
+                return;
+            }
+
+            let birthDateString = idCard.slice(6, 14);
+            let year = birthDateString.slice(0, 4);
+            let month = birthDateString.slice(4, 6);
+            let day = birthDateString.slice(6, 8);
+            if (month > 12 || day > 31) {
+                alert('出生日期输入有误!请输入正确的身份证号码!');
+                document.getElementById('output').innerText = ``;
+                return;
+            }
+
+            let formattedDate = `你的出生日期为: ${year}年${month}月${day}日`;
+            document.getElementById('output').innerText = formattedDate;
+        }
+        // 抽奖
+        const jiangpin = [
+            '华为Mate7pro',
+            '华为PadPro',
+            '小米14ULTRA',
+            'sU7模型',
+            '荣耀60i',
+        ];
+        function Lottery() {
+            const randomIndex = Math.floor(Math.random() * jiangpin.length);
+            let result = jiangpin[randomIndex];
+            document.getElementById('message').innerText = `您抽中的奖品是：${result}`;
+        }  
+    </script>
+</body>
+
+</html>
