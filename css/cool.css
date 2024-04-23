@@ -1,0 +1,54 @@
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+  margin-top: 300px;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+
+.main a {
+  display: block;
+  width: 300px;
+  height: 200px;
+  border: 10px solid #00ffd570;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.main a img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+  max-width: 100%;
+  border-radius: 50px;
+  margin-top: -80px;
+  margin-left: 0px;
+  scale: 1.2;
+  /* clip: rect(0px 200px 300px 100px); */
+  height: auto;
+  transition: all 0.5s;
+}
+
+.main a img:hover {
+  transform: scale(1.1);
+}
+
+.homeWorkBlock {
+  position: relative;
+}
+
+.bar {
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  line-height: 50px;
+  color: #fff;
+  bottom: 0px;
+  border-radius: 0px 0px 50px 50px;
+  right: 0;
+  left: 0;
+}
