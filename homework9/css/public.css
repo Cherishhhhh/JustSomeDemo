@@ -1,0 +1,49 @@
+/* 通用公用样式 */
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal
+}
+
+body {
+  font-family: Arial, Verdana, "Microsoft yahei", "Pingfang SC", Simsun;
+}
+
+.clears {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.global {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input,button, textarea, select,progress{
+vertical-align: middle;
+}
+
+input,button,textarea,select,progress{
+outline:none;
+}
+
+textarea{
+resize:none;
+}
