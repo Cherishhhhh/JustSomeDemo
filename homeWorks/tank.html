@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>让坦克开起来</title>
+	<style type="text/css">
+		input {
+			font-size: 26px;
+			margin-top: 20px;
+		}
+
+		body {
+			background-image: url(../assets/images/grassland.png);
+		}
+
+		#mytank {
+			position: absolute;
+			left: 10px;
+			top: 100px
+		}
+	</style>
+</head>
+
+<body>
+	<img id="mytank" src="../assets/images/right.png" />
+	<script>
+		// 编写代码，让坦克能上下左右移动
+		var tank = document.getElementById('mytank');
+		// 初始化
+		var tankPosition = { x: 0, y: 0 };
+		tank.style.top = `${tankPosition.x}px`;
+		tank.style.left = `${tankPosition.x}px`;
+
+		document.addEventListener('keydown', function (event) {
+			var key = event.key;
+			switch (key) {
+				case 'w' || 'W':
+				case 'ArrowUp':
+					mytank.src = '../assets/images/up.png';
+					tankPosition.y -= 20;
+					break;
+				case 's' || 'S':
+				case 'ArrowDown':
+					mytank.src = '../assets/images/down.png';
+					tankPosition.y += 20;
+					break;
+				case 'a' || 'A':
+				case 'ArrowLeft':
+					mytank.src = '../assets/images/left.png';
+					tankPosition.x -= 20;
+					break;
+				case 'd' || 'D':
+				case 'ArrowRight':
+					mytank.src = '../assets/images/right.png';
+					tankPosition.x += 20;
+					break;
+			}
+			updateTankPosition();
+		});
+
+		// 更新坦克位置
+		function updateTankPosition() {
+			var windowWidth = window.innerWidth;
+			var windowHeight = window.innerHeight;
+
+			if (tankPosition.x < 0) {
+				tankPosition.x = 0;
+			} else if (tankPosition.x + tank.offsetWidth > windowWidth) {
+				tankPosition.x = windowWidth - tank.offsetWidth;
+			}
+
+			if (tankPosition.y < 0) {
+				tankPosition.y = 0;
+			} else if (tankPosition.y + tank.offsetHeight > windowHeight) {
+				tankPosition.y = windowHeight - tank.offsetHeight;
+			}
+			tank.style.transform = `translate(${tankPosition.x}px,${tankPosition.y}px)`;
+		}
+
+		// 禁用右键菜单
+		document.addEventListener('contextmenu', function (event) {
+			event.preventDefault();
+		});
+	</script>
+</body>
+
+</html>
