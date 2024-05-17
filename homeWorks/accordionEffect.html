@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accordionEffect</title>
+    <link rel="stylesheet" href="../assets/accordionEffectAssets/css/style.css">
+    <link rel="shortcut icon" href="../assets/icon.ico" type="image/x-icon">
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="news">
+        <h1 class="title"><span>国际新闻</span></h1>
+        <div class="newContent">
+            <div class="pic">
+                <img src="../assets/accordionEffectAssets/images/newPic.jpg" alt="">
+            </div>
+            <div class="text">
+                国际新闻内容。衣元之而为之劫其井欲变人关拆生价绛，其专的小护先后绪没，不。
+            </div>
+        </div>
+
+        <h1 class="title"><span>娱乐新闻</span></h1>
+        <div class="newContent">
+            <div class="pic">
+                <img src="../assets/accordionEffectAssets/images/newPic.jpg" alt="">
+            </div>
+            <div class="text">
+                娱乐新闻内容。衣元之而为之劫其井欲变人关拆生价绛，其专的小护先后绪没，不。
+            </div>
+        </div>
+
+        <h1 class="title"><span>体育新闻</span></h1>
+        <div class="newContent">
+            <div class="pic">
+                <img src="../assets/accordionEffectAssets/images/newPic.jpg" alt="">
+            </div>
+            <div class="text">
+                体育新闻内容。衣元之而为之劫其井欲变人关拆生价绛，其专的小护先后绪没，不。
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".title").click(function () {
+                $(".newContent").hide();
+                $(this).next(".newContent").show();
+            });
+        });
+    </script>
+</body>
+
+</html>

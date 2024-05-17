@@ -1,0 +1,34 @@
+.news {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news .title {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    padding-left: 20px;
+    background-color: #619cf5;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.newContent {
+    overflow: hidden;
+    margin-bottom: 10px;
+    background: #f2f2f2;
+    display: none;
+}
+
+.newContent .pic {
+    float: left;
+    width: 200px;
+}
+
+.newContent .text {
+    line-height: 30px;
+    font-size: 16px;
+    float: right;
+    width: 380px;
+}
