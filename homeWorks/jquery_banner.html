@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery_banner</title>
+    <link rel="shortcut icon" href="../assets/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../assets/jqueryBanner/css/web.css">
+</head>
+
+<body>
+    <!-- banner -->
+    <div class="banner" id="banner">
+        <ul class="bannerUl" id="bannerUl">
+            <li><a href="#"><img src="../assets/jqueryBanner/images/banner1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../assets/jqueryBanner/images/banner2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../assets/jqueryBanner/images/banner3.jpg" alt=""></a></li>
+        </ul>
+        <!-- 控制点 -->
+        <div class="dots" id="dots">
+            <!-- <span class="active"></span>
+            <span></span>
+            <span></span> -->
+        </div>
+        <!-- 控制点 end -->
+    </div>
+    <!-- banner end -->
+    <script src="../js/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var bannerUl = $('#bannerUl');
+            var dots = $('#dots');
+            var li = bannerUl.find('li');
+            var length = li.length;
+
+            li.eq(0).fadeIn();
+
+            for (var i = 0; i < length; i++) {
+                dots.append($(`<span></span>`));
+            }
+
+            var span = dots.find('span');
+            span.first().addClass('active');
+
+            dots.on('click', 'span', function () {
+                var index = $(this).index();
+                li.eq(index).fadeIn();
+                li.eq(index).siblings().fadeOut();
+                span.removeClass('active').eq(index).addClass('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

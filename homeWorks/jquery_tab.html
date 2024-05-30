@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery_tab</title>
+    <link rel="shortcut icon" href="../assets/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../assets/jqueryTab/css/style.css">
+</head>
+
+<body>
+    <!-- 选项卡 -->
+    <div class="tab">
+        <ul class="tab-nav">
+            <li class="active">军事新闻</li>
+            <li>经济新闻</li>
+            <li>文化新闻</li>
+            <li>体育新闻</li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-item active">
+                <h3>军事新闻</h3>
+            </div>
+            <div class="tab-item">
+                <h3>经济新闻</h3>
+            </div>
+            <div class="tab-item">
+                <h3>文化新闻</h3>
+            </div>
+            <div class="tab-item">
+                <h3>体育新闻</h3>
+            </div>
+        </div>
+    </div>
+    <!-- 选项卡 end -->
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.tab-nav li').click(function () {
+                $('.tab-nav li').removeClass('active');
+                $(this).addClass('active');
+                var index = $(this).index();
+                $('.tab-content .tab-item').removeClass('active').eq(index).addClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
